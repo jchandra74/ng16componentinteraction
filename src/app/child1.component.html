@@ -1,0 +1,11 @@
+<div>
+        <p>Child 1</p>
+
+        <label>Name</label>
+        <input type="text" 
+            ng-model="$ctrl.entry.name" 
+            ng-model-options="{ updateOn: 'blur'}"
+            ng-change="$ctrl.updateEntry($event)">
+
+        <second entry="$ctrl.entry.address" on-updated="$ctrl.updateAddress($event)"></second>
+</div>

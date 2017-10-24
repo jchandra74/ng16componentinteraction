@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>AngularJS with TypeScript Starter Kit</title>
         <base href="/">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-theme.css">
     </head>
     <body>
         <app>Loading...</app>
         <script src="/node_modules/systemjs/dist/system.js"></script>
-        <script src="./config.js"></script>
+        <script src="/config.js"></script>
         <script>
             System.import('src')
                 .catch(function(err) { console.error(err); });

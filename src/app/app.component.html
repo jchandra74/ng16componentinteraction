@@ -1,5 +1,16 @@
-Hello, {{ $ctrl.message }}!
-
-<div>
-    <first entry="$ctrl.data" on-updated="$ctrl.onUpdated($event)"></first>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-xs-6">
+            <contact-editor 
+                contact="$ctrl.contact" 
+                states="$ctrl.states"
+                on-updated="$ctrl.onContactUpdated($event)">
+            </contact-editor>
+        </div>
+        <div class="col-lg-6 col-xs-6">
+            <contact-viewer
+                contact="$ctrl.contact">
+            </contact-viewer>
+        </div>
+    </div>
 </div>

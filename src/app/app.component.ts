@@ -1,34 +1,46 @@
 import { IOnInit, ILogService } from 'angular';
-import { IComponentOptionsExt } from './angular.ext';
 
 class AppComponentController implements IOnInit {
-    public message: string;
-    public data: any;
+    public contact: any;
+    public states: string[];
 
+    public ComponentName = 'AppComponent';
+    static $inject: string[] = [ '$log' ];
     constructor(
         private $log: ILogService
     ) { }
 
     $onInit() {
-        this.message = 'World';
-
-        this.data = {
-            name: 'Jimmy',
+        this.contact = {
+            firstName: 'John',
+            lastName: 'Doe',
+            phone: '867-5309',
             address: {
-                line1: '821 Pacific Hwy'
+                line1: '1000 Nowhere St',
+                suburb: 'Sydney',
+                state: 'NSW',
+                postCode: '2000'
             }
         };
+
+        this.states = [
+            'ACT',
+            'NSW',
+            'NT',
+            'QLD',
+            'SA',
+            'VIC',
+            'WA'
+        ]
     }
 
-    onUpdated(e) {
-        this.$log.info('app.onUpdated', e);
+    onContactUpdated(contact) {
+        this.$log.info(`[${this.ComponentName}] onContactUpdated`, contact);
     }
 }
 
-const AppComponent: IComponentOptionsExt = {
+export const AppComponent = {
     selector: 'app',
     controller: AppComponentController,
     templateUrl: '/src/app/app.component.html'
 }
-
-export { AppComponent }

@@ -1,14 +1,16 @@
 import { module, IModule } from 'angular';
 
 import { AppComponent } from './app.component';
-import { Child1Component } from './child1.component';
-import { Child2Component } from './child2.component';
+import { ContactEditorComponent } from './contact-editor/contact-editor.component';
+import { AddressEditorComponent } from './address-editor/address-editor.component';
+import { ContactViewerComponent } from './contact-viewer/contact-viewer.component';
 
 const AppModule: IModule = module('AppModule', []);
 
 AppModule
     .component(AppComponent.selector, AppComponent)
-    .component(Child1Component.selector, Child1Component)
-    .component(Child2Component.selector, Child2Component);
+    .component(ContactEditorComponent.selector, ContactEditorComponent)
+    .component(AddressEditorComponent.selector, AddressEditorComponent)
+    .component(ContactViewerComponent.selector, ContactViewerComponent);
 
 export { AppModule };
